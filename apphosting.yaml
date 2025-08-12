@@ -1,0 +1,16 @@
+# Settings to manage and configure a Firebase App Hosting backend.
+# https://firebase.google.com/docs/app-hosting/configure
+
+# The command to run to build your app.
+build: "npm run build"
+
+# The command to run to start your app.
+run: "npm run start"
+
+# The environment variables to set on the App Hosting backend.
+env:
+  - variable: FIREBASE_PROJECT_ID
+    value: "ahimsa-august"
+    availability:
+      - BUILD
+      - RUNTIME

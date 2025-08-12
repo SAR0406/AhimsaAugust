@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 44% 95%; /* Very light beige, close to white */
+    --foreground: 240 10% 3.9%;
+
+    --card: 48 44% 95%;
+    --card-foreground: 240 10% 3.9%;
+ 
+    --popover: 48 44% 95%;
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --primary: 35 100% 58%; /* Saffron */
+    --primary-foreground: 240 10% 3.9%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --accent: 142 71% 45%; /* Forest Green */
+    --accent-foreground: 0 0% 100%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 35 100% 58%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 35 100% 58%; /* Saffron */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 71% 45%; /* Forest Green */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 35 100% 58%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+    .glassmorphism {
+        @apply backdrop-blur-md;
+        background-color: hsla(var(--card), 0.5);
+        @apply border border-white/10;
+    }
+
+    .text-gradient-animated {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    }
+
+    .glow-on-hover {
+        @apply transition-all duration-300;
+        box-shadow: 0 0 15px -5px hsl(var(--primary) / 0.5);
+    }
+    .glow-on-hover:hover {
+        box-shadow: 0 0 25px -3px hsl(var(--primary) / 0.7);
+        transform: scale(1.03);
+    }
+
+    .focus-glow:focus-visible {
+        outline: none;
+        box-shadow: 0 0 15px 3px hsl(var(--ring) / 0.4), 0 0 3px 1px hsl(var(--ring) / 0.7);
+    }
+}

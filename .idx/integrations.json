@@ -1,0 +1,6 @@
+{
+  "firebase_hosting": {
+    "deploymentHostingUrl": "https://ahimsa-august.web.app"
+  },
+  "cloud_run_deploy": {}
+}
